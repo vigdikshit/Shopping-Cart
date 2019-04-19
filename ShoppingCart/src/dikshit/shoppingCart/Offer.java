@@ -4,12 +4,13 @@ public class Offer {
 	private String item;
 	private int buyCount;
 	private int freeCount;
-	
+
 	public Offer(String item, int buyCount, int freeCount) {
 		this.item = item;
 		this.buyCount = buyCount;
 		this.freeCount = freeCount;
 	}
+
 	public String getItem() {
 		return item;
 	}

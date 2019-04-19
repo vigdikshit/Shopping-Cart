@@ -5,22 +5,9 @@ import java.util.Map;
 
 public class CalculatePrice {
 
-	public double calculate(List<String> items, Map<String, Double> products) {
+	public double calculate(List<String> items, Map<String, Double> products, Map<String, Offer> offer,
+			Map<String, Integer> offrCounter) {
 
-		double totalCost = 0;
-		for (String item : items) {
-			if (item.equals("apple")) {
-				totalCost += products.get(item);
-			} else if (item.equals("orange")) {
-				totalCost += products.get(item);
-			}
-		}
-		return totalCost;
-
-	}
-
-	public double calculate(List<String> items, Map<String, Double> products, Map<String, Offer> offer, Map<String, Integer> offrCounter) {
-		
 		double totalCost = 0;
 		for (String item : items) {
 			if (products.containsKey(item)) {
@@ -34,8 +21,7 @@ public class CalculatePrice {
 					} else {
 						offrCounter.put(item, 0);
 					}
-				}
-				else {
+				} else {
 					totalCost += products.get(item);
 				}
 			}
