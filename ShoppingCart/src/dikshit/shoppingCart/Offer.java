@@ -1,5 +1,9 @@
 package dikshit.shoppingCart;
 
+/**
+ * Offer class to main offers for each product
+ *
+ */
 public class Offer {
 	private String item;
 	private int buyCount;

@@ -5,6 +5,16 @@ import java.util.Map;
 
 public class CalculatePrice {
 
+	/**
+	 * This method calculates the total price for the items present in the shopping
+	 * cart
+	 * 
+	 * @param items
+	 * @param products
+	 * @param offer
+	 * @param offrCounter
+	 * @return
+	 */
 	public double calculate(List<String> items, Map<String, Double> products, Map<String, Offer> offer,
 			Map<String, Integer> offrCounter) {
 

@@ -3,6 +3,10 @@ package dikshit.shoppingCart;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Products class to maintain items available to shop with their price
+ *
+ */
 public class Products {
 
 	private Map<String, Double> items;
