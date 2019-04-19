@@ -1,5 +1,6 @@
 package dikshit.shoppingCart;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -31,23 +32,20 @@ public class Checkout {
 			offr.put(apple.getItem(), apple);
 			offr.put(orange.getItem(), orange);
 
-			Map<String, Integer> offrCounter = new HashMap<>();
-			offrCounter.put("orange", 0);
-			offrCounter.put("apple", 0);
-
 			products.addItems("apple", 0.6);
 			products.addItems("orange", 0.25);
 
 			// Read input from user and put it in array
-			System.out.println("Enter items with comma seperated (like apple,orange,apple) : ");
-			String s = scan.nextLine().toLowerCase();
-			String arr[] = s.split(",");
+			while (true) {
+				System.out.println("Enter items with comma seperated (like apple,orange,apple) : ");
+				String s = scan.nextLine().toLowerCase();
+				String arr[] = s.split(",");
+				list = Arrays.asList(arr);
 
-			list = Arrays.asList(arr);
+				double totalCost = calPrice.calculate(list, products.getItems(), offr);
+				System.out.println(new DecimalFormat("0.00").format(totalCost) + "£");
 
-			double totalCost = calPrice.calculate(list, products.getItems(), offr, offrCounter);
-
-			System.out.println(totalCost + "£");
+			}
 
 		} catch (Exception ex) {
 			ex.printStackTrace();

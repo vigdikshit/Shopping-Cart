@@ -1,5 +1,6 @@
 package dikshit.shoppingCart;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,9 +16,12 @@ public class CalculatePrice {
 	 * @param offrCounter
 	 * @return
 	 */
-	public double calculate(List<String> items, Map<String, Double> products, Map<String, Offer> offer,
-			Map<String, Integer> offrCounter) {
-
+	public double calculate(List<String> items, Map<String, Double> products, Map<String, Offer> offer) {
+		Map<String, Integer> offrCounter = new HashMap<>();
+		for(String item: offer.keySet()) {
+			offrCounter.put(item, 0);
+		}
+		
 		double totalCost = 0;
 		for (String item : items) {
 			if (products.containsKey(item)) {
